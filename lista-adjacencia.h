@@ -11,6 +11,8 @@ typedef struct GRAFO Grafo;
 /*cria um vertice com 10 possiveis arestas e o retorna*/
 Grafo* criavertice(int nro);
 
+void apagavertice(Grafo** raiz, int id, int nrovert);
+
 /*mostra o id de todos os vertices criados*/
 void ShowAllVertices(Grafo** raiz, int nrovert);
 
