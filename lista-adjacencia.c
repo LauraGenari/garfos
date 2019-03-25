@@ -156,6 +156,16 @@ void ExisteCaminhoEuleriano(Grafo** raiz, int nrovert){
 	}
 }
 
+void CicloEuleriano(Grafo** raiz, int nrovert){
+	int totalarestas = 0;
+	for (int i = 0; i < nrovert; ++i){
+		if( raiz[i]->nroarestas % 2 == 1){
+			printf("Não existe ciclo euleriano\n");
+			break;
+		}
+	}
+}
+
 void ExisteCaminhoHamiltoniano(Grafo ** raiz){
 
 
