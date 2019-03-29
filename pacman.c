@@ -8,21 +8,21 @@ struct MATRIZ {
   int deslocamento;
 };
 
-Matriz ** criaMatriz(int nrovertices){
-  Matriz ** mat = malloc(sizeof(Matriz*)*nrovertices);
+Matriz * criaMatriz(int nrovertices){
+  Matriz * mat = malloc(sizeof(Matriz));
   if(!mat){
     return NULL;
   }
 
-  (*mat)->n = nrovertices;
-  (*mat)->m = malloc(sizeof(int*)*nrovertices);
+  (mat)->n = nrovertices;
+  (mat)->m = malloc(sizeof(int*)*nrovertices);
   for (int i = 0; i < nrovertices; i++) {
-    (*mat)->m[i] =  calloc(sizeof(int),nrovertices);
+    (mat)->m[i] =  calloc(sizeof(int),nrovertices);
   }
   return mat;
 }
 
- void caminha (int px, int py, int fx, int fy, Grafo ** mat, int pacman, int fantasma){
+ void caminha (int px, int py, int fx, int fy, Grafo * mat, int pacman, int fantasma){
        mat->m[px][py] = pacman;
 
        calcula(px, py, fx, fy, mat, 0);
@@ -51,7 +51,7 @@ void calcula(int px, int py, int fx, int fy, Grafo ** mat, int peso){
 
 int main(){
 
-  Matriz ** mat = criaMatriz(5);
+  Matriz * mat = criaMatriz(5);
 
   int pacman = -1;
   int fantasma = -2;
